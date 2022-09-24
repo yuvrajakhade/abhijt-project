@@ -10,30 +10,29 @@ import { InquiryComponent } from './Component/inquiry/inquiry.component';
 import { MemberListComponent } from './Component/MemberList/member-list.component';
 import { TrainersListComponent } from './Component/trainers-list/trainers-list.component';
 
-
 const routes: Routes = [
-  {path:'',redirectTo:'login',pathMatch:'full'},
-  {path:'login',component:LoginComponent},
-  {path:'Registration',component:RegistrationComponent},
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'Registration', component: RegistrationComponent },
   { path: 'graph', component: DashboardGraphComponent },
-  {path:'Dashboard',component:DashboardComponent,
-
-  children: [
-    {path: '', component: DashboardGraphComponent },
-    {path:'Member',component:MemberListComponent},
-    { path: 'Trainers', component: TrainersListComponent },
-    { path: 'Inquiry', component: InquiryComponent ,
-    children:[
-      { path: '', component: AddInquiryComponent },
-    ]
-    },
-    // { path: 'AddInquiry', component: AddInquiryComponent },
-  ],
-}
+  {
+    path: 'Dashboard',
+    component: DashboardComponent,
+    children: [
+      { path: '', component: DashboardGraphComponent },
+      { path: 'Member', component: MemberListComponent },
+      { path: 'Trainers', component: TrainersListComponent },
+      {
+        path: 'Inquiry',
+        component: InquiryComponent,
+        children: [{ path: 'AddInquiry', component: AddInquiryComponent }],
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

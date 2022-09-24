@@ -4,16 +4,15 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-inquiry',
   templateUrl: './inquiry.component.html',
-  styleUrls: ['./inquiry.component.css']
+  styleUrls: ['./inquiry.component.css'],
 })
 export class InquiryComponent implements OnInit {
+  show: boolean = true;
+  constructor(private route: Router) {}
 
-  constructor(private route:Router) { }
-
-  ngOnInit(): void {
-  }
-  navigateToAddInquiry()
-  {
-    this.route.navigate(["/Dashboard/AddInquiry"])
+  ngOnInit(): void {}
+  navigateToAddInquiry() {
+    this.show = false;
+    this.route.navigate(['/Dashboard/Inquiry/AddInquiry']);
   }
 }
