@@ -1,0 +1,126 @@
+.profile-widget {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
+    margin-bottom: 30px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+doctor-name a {
+    color: #333;
+}
+a:hover, a:active, a:focus {
+    text-decoration: none;
+    color: #009ce7;
+    outline: none;
+}
+.doctor-name {
+    margin: 0;
+}
+.text-ellipsis {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+h4, .h4 {
+    font-size: 1.125rem;
+}
+.doc-prof {
+    color: #777;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+.dropdown.profile-action {
+    position: absolute;
+    right: 5px;
+    text-align: right;
+    top: 10px;
+}
+.doctor-img {
+    cursor: pointer;
+    height: 80px;
+    margin: 0 auto 15px;
+    position: relative;
+    width: 80px;
+}
+.dropdown-menu {
+    font-size: 13px;
+}
+.dropdown-menu {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    transform-origin: left top 0;
+    box-shadow: inherit;
+    background-color: #fff;
+}
+.action-icon {
+    color: #777;
+    font-size: 18px;
+    padding: 0 10px;
+    display: inline-block;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.dropdown.profile-action {
+    position: absolute;
+    right: 5px;
+    text-align: right;
+    top: 10px;
+}
+.avatar > img {
+    width: 100%;
+    display: block;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+.page-wrapper > .content {
+    padding: 30px;
+}
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.col-sm-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+}
+.page-title {
+    color: #565656;
+    font-size: 21px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+.m-b-20 {
+    margin-bottom: 20px !important;
+}
+.btn.btn-rounded {
+    border-radius: 50px;
+}
+.btn-primary {
+    border-color: transparent;
+    background-color: #009efb;
+}
+.btn {
+    font-size: 0.875rem;
+}
+.float-right {
+    float: right!important;
+}
+@media (min-width: 576px)

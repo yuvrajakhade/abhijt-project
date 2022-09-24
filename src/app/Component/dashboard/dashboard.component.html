@@ -1,0 +1,96 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav [(opened)]="opened" mode="side">
+      <div class="list background">
+        <img src="https://www.designfier.com/blog/wp-content/uploads/2020/01/Minimalist-Logo-Design.png" style="width: 100%;margin-bottom: 10%;">
+      </div>
+      <mat-list>
+        <mat-list-item id="sidenav-item" routerLink="/Dashboard" (click)="CloseOnClick()"
+          [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-list-item">
+          <mat-icon>dashboard</mat-icon><span style="padding: 0px 10px"></span> <span id="sidnav-menu">Dashboard</span>
+        </mat-list-item>
+
+        <mat-list-item id="sidenav-item" routerLink="/Dashboard/Inquiry" (click)="CloseOnClick()"
+          routerLinkActive="active-list-item">
+          <mat-icon>forum</mat-icon><span style="padding: 0px 10px"></span><span id="sidnav-menu">Inquiry</span>
+        </mat-list-item>
+
+        <mat-list-item  id="sidenav-item" routerLink="/Dashboard/Member" (click)="CloseOnClick()"
+          routerLinkActive="active-list-item">
+          <mat-icon>card_membership</mat-icon><span style="padding: 0px 10px"></span><span id="sidnav-menu">Members</span>
+        </mat-list-item>
+
+        <mat-list-item  id="sidenav-item" routerLink="/Dashboard/Trainers" (click)="CloseOnClick()"
+          routerLinkActive="active-list-item">
+          <mat-icon>assignment_ind</mat-icon><span style="padding: 0px 10px"></span><span id="sidnav-menu">Trainer</span>
+        </mat-list-item>
+
+        <mat-list-item *ngIf="admin" id="sidenav-item" routerLink="/Dashboard/AddInquiry" (click)="CloseOnClick()"
+          routerLinkActive="active-list-item">
+          <mat-icon>payment</mat-icon><span style="padding: 0px 10px"></span><span id="sidnav-menu">Payments</span>
+        </mat-list-item>
+
+        <mat-list-item *ngIf="admin" id="sidenav-item" routerLink="/sidenav/moulder" (click)="CloseOnClick()"
+          routerLinkActive="active-list-item">
+          <mat-icon>touch_app
+          </mat-icon><span style="padding: 0px 10px"></span><span id="sidnav-menu">Attendance</span>
+        </mat-list-item>
+
+        <mat-list-item *ngIf="admin" id="sidenav-item" routerLink="/sidenav/color/colorname" (click)="OpenOnClick()"
+          routerLinkActive="active-list-item">
+          <mat-icon>color_lens</mat-icon><span style="padding: 0px 10px"></span><span id="sidnav-menu">Reports</span>
+          <mat-icon *ngIf="!coloractive" style="padding-left:10px" class="ml-auto"> keyboard_arrow_down
+          </mat-icon>
+          <mat-icon *ngIf="coloractive" style="padding-left:10px" class="ml-auto"> keyboard_arrow_up
+          </mat-icon>
+        </mat-list-item>
+
+
+        <mat-list-item *ngIf=show id="sidenav-item" routerLink="/sidenav/color/colorname"
+          routerLinkActive="active-list-item">
+          <mat-icon>brush</mat-icon><span style="padding: 0px 10px"></span><span id="sidnav-menu">Sales Report</span>
+        </mat-list-item>
+
+        <mat-list-item *ngIf=show id="sidenav-item" routerLink="/sidenav/color/colorcode"
+          routerLinkActive="active-list-item">
+          <mat-icon>brush</mat-icon><span style="padding: 0px 10px"></span><span id="sidnav-menu">Admission Report</span>
+        </mat-list-item>
+      </mat-list>
+    </mat-sidenav>
+
+
+    <mat-sidenav-content>
+      <mat-toolbar>
+        <button mat-icon-button (click)="opened=!opened">
+
+          <div *ngIf="!opened" class="menu_icon1">
+            <mat-icon id="dash-icon">menu_open</mat-icon>
+          </div>
+          <div *ngIf="opened" class="menu_icon">
+            <mat-icon id="dash-icon">menu_open</mat-icon>
+          </div>
+
+        </button>
+
+        <div class="ml-auto user-name" style="font-size: 1.1vw;text-transform:uppercase;"> WELCOME
+          {{Name}}
+        </div>
+
+        <div class="ml-auto user-name" style="font-size: 1.1vw;position: absolute;
+        right: 2%;">
+          <button mat-icon-button (click)="logout()">
+            <mat-icon style="margin-top: -15%">settings_power</mat-icon>
+          </button></div>
+
+      </mat-toolbar>
+      
+
+      <div class="main-content">
+
+        <router-outlet></router-outlet>
+
+      </div>
+
+
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>

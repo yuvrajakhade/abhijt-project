@@ -1,0 +1,41 @@
+.text-center {
+    text-align: center;
+  }
+  .login-container {
+    display: grid;
+    height: 100vh;
+    place-items: center;
+  }
+  #form_login {
+    width: 40%;
+  }
+  
+  .d-flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mat-form-field {
+    width: 100%;
+  }
+  .mt-top {
+    margin-top: 30px;
+  }
+  .mt-top-2 {
+    margin-top: 10px;
+  }
+  
+  .bg {
+    /* The image used */
+    
+    background-image: url("https://wallpaper.dog/large/20480696.jpg");
+    /* Full height */
+    height: 100vh;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  body {
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
+  }

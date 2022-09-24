@@ -1,0 +1,42 @@
+<div class="bg">
+  <div class="login-container">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate id="form_login">
+      <mat-card>
+        <mat-card-title class="text-center">Login</mat-card-title>
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="Email" formControlName="email">
+            <mat-error *ngIf="!loginForm.get('email')?.errors?.required && (loginForm.get('email')?.errors?.pattern)">
+              Please enter a valid email address
+            </mat-error>
+            <mat-error
+              *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched) && loginForm.get('email')?.errors?.required">
+              Email is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="mt-top-2">
+          <mat-form-field>
+            <input matInput type="password" placeholder="Password" formControlName="password">
+            <mat-error *ngIf="!loginForm.get('password')?.errors?.required">
+              Password length must be greater than or equal to 8 and password must contain one or more uppercase ,
+              lowercase , numeric and special characters
+            </mat-error>
+            <mat-error
+              *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched) && loginForm.get('password')?.errors?.required">
+              Password is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="mt-top">
+          <button class="w-100" [disabled]="!loginForm.valid" mat-raised-button color="primary" mat-button>Sign
+            In</button>
+        </div>
+        <hr>
+        <div class="text-center">
+        <a routerLink="/Registration" routerLinkActive="active">Signup</a>
+      </div>
+      </mat-card>
+    </form>
+  </div>
+</div>

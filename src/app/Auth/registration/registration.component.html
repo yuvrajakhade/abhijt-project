@@ -1,0 +1,69 @@
+<div class="bg">
+    <div class="login-container">
+      <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" novalidate id="form_login">
+        <mat-card>
+          <mat-card-title class="text-center">Registration</mat-card-title>
+          <div>
+            <mat-form-field>
+              <input matInput placeholder="Name" formControlName="name">
+              <mat-error *ngIf="!registrationForm.get('name')?.errors?.required && (registrationForm.get('name')?.errors?.pattern)">
+                Please enter Name
+              </mat-error>
+              <mat-error
+                *ngIf="registrationForm.get('name')?.invalid && (registrationForm.get('name')?.dirty || registrationForm.get('name')?.touched) && registrationForm.get('name')?.errors?.required">
+                Name is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <input matInput placeholder="Contact" formControlName="contact">
+              <mat-error *ngIf="!registrationForm.get('contact')?.errors?.required && (registrationForm.get('contact')?.errors?.pattern)">
+                Please enter Contact Number
+              </mat-error>
+              <mat-error
+                *ngIf="registrationForm.get('contact')?.invalid && (registrationForm.get('contact')?.dirty || registrationForm.get('contact')?.touched) && registrationForm.get('contact')?.errors?.required">
+                Contact is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <input matInput placeholder="Email" formControlName="email">
+              <mat-error *ngIf="!registrationForm.get('email')?.errors?.required && (registrationForm.get('email')?.errors?.pattern)">
+                Please enter a valid email address
+              </mat-error>
+              <mat-error
+                *ngIf="registrationForm.get('email')?.invalid && (registrationForm.get('email')?.dirty || registrationForm.get('email')?.touched) && registrationForm.get('email')?.errors?.required">
+                Email is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <input matInput type="password" placeholder="Password" formControlName="password">
+              <mat-error *ngIf="!registrationForm.get('password')?.errors?.required">
+                Password length must be greater than or equal to 8 and password must contain one or more uppercase ,
+                lowercase , numeric and special characters
+              </mat-error>
+              <mat-error
+                *ngIf="registrationForm.get('password')?.invalid && (registrationForm.get('password')?.dirty || registrationForm.get('password')?.touched) && registrationForm.get('password')?.errors?.required">
+                Password is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+          
+          
+          <div class="mt-top">
+            <button class="w-100" [disabled]="!registrationForm.valid" mat-raised-button color="primary" mat-button>Sign
+              Up</button>
+          </div>
+          <hr>
+          <div class="text-center">
+            <a routerLink="/" routerLinkActive="active">Login</a>
+          </div>
+        </mat-card>
+      </form>
+    </div>
+  </div>
+  
